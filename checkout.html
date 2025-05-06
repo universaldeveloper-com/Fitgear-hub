@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Gym Supplies</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Navigation (same as index.html) -->
+  <nav class="fixed top-0 w-full bg-gray-800 bg-opacity-90 shadow-md z-10">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold">GymStore</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="index.html" class="hover:text-blue-400">Home</a>
+        <a href="shop.html" class="hover:text-blue-400">Shop</a>
+        <a href="cart.html" class="hover:text-blue-400">Cart</a>
+        <a href="#" class="hover:text-blue-400">Account</a>
+        <a href="#" class="hover:text-blue-400">Contact</a>
+      </div>
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+      <a href="index.html" class="block px-4 py-2 hover:bg-gray-700">Home</a>
+      <a href="shop.html" class="block px-4 py-2 hover:bg-gray-700">Shop</a>
+      <a href="cart.html" class="block px-4 py-2 hover:bg-gray-700">Cart</a>
+      <a href="#" class="block px-4 py-2 hover:bg-gray-700">Account</a>
+      <a href="#" class="block px-4 py-2 hover:bg-gray-700">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Checkout Section -->
+  <section class="container mx-auto px-4 py-24">
+    <h1 class="text-4xl font-bold mb-8 text-center">Checkout</h1>
+    <div class="max-w-lg mx-auto bg-gray-800 p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-4">Shipping Information</h2>
+      <form>
+        <input type="text" placeholder="Full Name" class="w-full bg-gray-700 text-white px-4 py-2 mb-4 rounded-lg">
+        <input type="text" placeholder="Address" class="w-full bg-gray-700 text-white px-4 py-2 mb-4 rounded-lg">
+        <input type="text" placeholder="City" class="w-full bg-gray-700 text-white px-4 py-2 mb-4 rounded-lg">
+        <input type="text" placeholder="Postal Code" class="w-full bg-gray-700 text-white px-4 py-2 mb-4 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">Payment Information</h2>
+        <p class="text-gray-400 mb-4">Payment integration coming soon!</p>
+        <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 w-full">Place Order</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-gray-400">&copy; 2025 GymStore. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.0.0/motion.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
