@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Shop premium gym supplies: protein powders, equipment, and accessories.">
-  <title>Gym Supplies Store</title>
+  <meta name="description" content="Shop premium gym supplies at FitGear Hub: protein powders, equipment, and accessories.">
+  <title>FitGear Hub</title>
   <!-- Tailwind CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <!-- Custom CSS -->
@@ -12,17 +12,16 @@
   <!-- Favicon -->
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
-<body class="bg-gray-900 text-white">
+<body class="bg-gray-900 text-white font-inter">
   <!-- Navigation -->
-  <nav class="fixed top-0 w-full bg-gray-800 bg-opacity-90 shadow-md z-10">
+  <nav class="fixed top-0 w-full bg-gray-800 bg-opacity-90 glass z-10">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-2xl font-bold">GymStore</a>
+      <a href="index.html" class="text-2xl font-bold">FitGear Hub</a>
       <div class="hidden md:flex space-x-6">
-        <a href="index.html" class="hover:text-blue-400">Home</a>
-        <a href="shop.html" class="hover:text-blue-400">Shop</a>
-        <a href="cart.html" class="hover:text-blue-400">Cart</a>
-        <a href="#" class="hover:text-blue-400">Account</a>
-        <a href="#" class="hover:text-blue-400">Contact</a>
+        <a href="index.html" class="hover:text-blue-400 transition-colors">Home</a>
+        <a href="shop.html" class="hover:text-blue-400 transition-colors">Shop</a>
+        <a href="cart.html" class="hover:text-blue-400 transition-colors">Cart</a>
+        <a href="sale.html" class="hover:text-blue-400 transition-colors">90% Products</a>
       </div>
       <!-- Mobile Menu Button -->
       <button id="menu-btn" class="md:hidden focus:outline-none">
@@ -32,60 +31,80 @@
       </button>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 glass">
       <a href="index.html" class="block px-4 py-2 hover:bg-gray-700">Home</a>
       <a href="shop.html" class="block px-4 py-2 hover:bg-gray-700">Shop</a>
       <a href="cart.html" class="block px-4 py-2 hover:bg-gray-700">Cart</a>
-      <a href="#" class="block px-4 py-2 hover:bg-gray-700">Account</a>
-      <a href="#" class="block px-4 py-2 hover:bg-gray-700">Contact</a>
+      <a href="sale.html" class="block px-4 py-2 hover:bg-gray-700">90% Products</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('assets/images/hero-bg.jpg');">
+  <section class="relative h-screen flex items-center justify-center bg-cover bg-center parallax" style="background-image: url('assets/images/hero-bg.jpg');">
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
     <div class="text-center z-10">
-      <h1 class="text-5xl md:text-7xl font-bold mb-4 animate-fade-in">Power Up Your Performance</h1>
-      <p class="text-lg md:text-2xl mb-6">Premium gym supplies for every athlete.</p>
-      <a href="shop.html" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-transform transform hover:scale-105">Shop Now</a>
+      <h1 class="text-5xl md:text-7xl font-bold mb-4 animate-slide-in">Power Up Your Performance</h1>
+      <p class="text-lg md:text-2xl mb-6 animate-fade-in">Premium gym supplies for every athlete.</p>
+      <a href="shop.html" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-transform transform hover:scale-105 pulse">Shop Now</a>
     </div>
   </section>
 
   <!-- Featured Categories -->
   <section class="container mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold mb-8 text-center">Shop by Category</h2>
+    <h2 class="text-3xl font-bold mb-8 text-center animate-fade-in">Shop by Category</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <a href="shop.html" class="bg-gray-800 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
-        <h3 class="text-xl font-semibold">Powders</h3>
-        <p class="text-gray-400">Protein, Pre-Workout, BCAAs</p>
-      </a>
-      <a href="shop.html" class="bg-gray-800 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
+      <a href="shop.html" class="glass rounded-lg p-6 text-center hover:shadow-lg transition-shadow animate-slide-up">
         <h3 class="text-xl font-semibold">Equipment</h3>
-        <p class="text-gray-400">Dumbbells, Mats, Bands</p>
+        <p class="text-gray-400">Dumbbells, Kettlebells, Bars</p>
       </a>
-      <a href="shop.html" class="bg-gray-800 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
+      <a href="shop.html" class="glass rounded-lg p-6 text-center hover:shadow-lg transition-shadow animate-slide-up delay-100">
         <h3 class="text-xl font-semibold">Accessories</h3>
-        <p class="text-gray-400">Bottles, Bags, Apparel</p>
+        <p class="text-gray-400">Grip Strengtheners, Jump Ropes</p>
+      </a>
+      <a href="shop.html" class="glass rounded-lg p-6 text-center hover:shadow-lg transition-shadow animate-slide-up delay-200">
+        <h3 class="text-xl font-semibold">Combos</h3>
+        <p class="text-gray-400">Gym Bags, Shakers, Belts</p>
       </a>
     </div>
   </section>
 
   <!-- Best Sellers -->
-  <section class="container mx-auto px-4 py-16 bg-gray-800">
-    <h2 class="text-3xl font-bold mb-8 text-center">Best Sellers</h2>
+  <section class="container mx-auto px-4 py-16 bg-gray-800 glass">
+    <h2 class="text-3xl font-bold mb-8 text-center animate-fade-in">Best Sellers</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6" id="best-sellers"></div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 py-8">
-    <div class="container mx-auto px-4 text-center">
-      <p class="text-gray-400 mb-4">Subscribe to our newsletter for exclusive offers!</p>
-      <form class="flex justify-center mb-4">
-        <input type="email" placeholder="Enter your email" class="px-4 py-2 rounded-l-lg bg-gray-800 text-white focus:outline-none">
-        <button type="submit" class="bg-blue-500 px-4 py-2 rounded-r-lg hover:bg-blue-600">Subscribe</button>
-      </form>
-      <p class="text-gray-400">&copy; 2025 GymStore. All rights reserved.</p>
+  <footer class="bg-gray-900 py-12">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-xl font-bold mb-4">FitGear Hub</h3>
+        <p class="text-gray-400">Your one-stop shop for premium gym supplies.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Legal</h3>
+        <a href="#" class="block text-gray-400 hover:text-blue-400">Privacy Policy</a>
+        <a href="#" class="block text-gray-400 hover:text-blue-400">Terms of Service</a>
+        <a href="#" class="block text-gray-400 hover:text-blue-400">Refund Policy</a>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Connect</h3>
+        <a href="#" class="block text-gray-400 hover:text-blue-400">Contact Us</a>
+        <div class="flex space-x-4 mt-4">
+          <a href="#" class="text-gray-400 hover:text-blue-400">📘</a>
+          <a href="#" class="text-gray-400 hover:text-blue-400">🐦</a>
+          <a href="#" class="text-gray-400 hover:text-blue-400">📸</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+        <form class="flex">
+          <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-l-lg bg-gray-800 text-white focus:outline-none">
+          <button type="submit" class="bg-blue-500 px-4 py-2 rounded-r-lg hover:bg-blue-600">Subscribe</button>
+        </form>
+      </div>
     </div>
+    <p class="text-center text-gray-400 mt-8">© 2025 FitGear Hub. All rights reserved.</p>
   </footer>
 
   <!-- Framer Motion CDN -->
