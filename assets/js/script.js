@@ -2,32 +2,164 @@
 const products = [
   {
     id: 1,
-    category: "Powders",
-    name: "Premium Whey Protein",
-    price: 29.99,
-    image: "assets/images/whey-protein.jpg",
-    description: "High-quality whey protein for muscle recovery.",
+    category: "Equipment",
+    name: "16 Kg Home Gym Set",
+    price: 99.99,
+    image: "assets/images/product1.jpg",
+    description: "16 Kg Home Gym Set With One 3 Ft Curl And One Pair Dumbbell Rods With Gym Accessories, Black",
     rating: 4.5,
+    features: ["16 kg total weight", "Includes 3 ft curl bar", "Dumbbell rods included", "Black finish"],
+    specs: { weight: "16 kg", material: "Steel", color: "Black" },
+    reviews: [
+      { name: "John M.", date: "2025-04-10", rating: 5, comment: "Perfect for my home gym! Sturdy and versatile." },
+      { name: "Sarah L.", date: "2025-03-15", rating: 4, comment: "Good quality, but the curl bar could be longer." },
+      { name: "Mike P.", date: "2025-02-20", rating: 4.5, comment: "Great value for the price. Highly recommend!" }
+    ]
   },
   {
     id: 2,
     category: "Equipment",
-    name: "Adjustable Dumbbell Set",
-    price: 89.99,
-    image: "assets/images/dumbbell.jpg",
-    description: "Versatile dumbbells for home workouts.",
+    name: "Burn Lab 6 in 1 Weight Training Kit",
+    price: 149.99,
+    image: "assets/images/product2.jpg",
+    description: "Burn lab 6 in 1 multifunctional weight training kit - Dumbbells, Kettlebells, Barbells & Push up brackets in 1 | Adjustable Weights | Perfect for Full Body Workout",
     rating: 4.8,
+    features: ["6-in-1 functionality", "Adjustable weights", "Includes push-up brackets", "Full-body workout"],
+    specs: { weight: "Varies", material: "Steel & Plastic", color: "Black" },
+    reviews: [
+      { name: "Emily R.", date: "2025-04-05", rating: 5, comment: "This kit is a game-changer! So versatile." },
+      { name: "David K.", date: "2025-03-10", rating: 4.5, comment: "Love the adjustability, but takes time to switch weights." },
+      { name: "Lisa T.", date: "2025-02-15", rating: 4, comment: "Great for small spaces!" }
+    ]
   },
   {
     id: 3,
     category: "Accessories",
-    name: "Shaker Bottle",
-    price: 9.99,
-    image: "assets/images/shaker.jpg",
-    description: "BPA-free shaker for your protein shakes.",
+    name: "Adjustable Hand Grip Strengthener",
+    price: 19.99,
+    image: "assets/images/product3.jpg",
+    description: "Adjustable Hand Grip Strengthener with Forearm Exerciser, Hand Gripper, Power Grip-Gym-60kg-Finger exercise for Veins for Men, Women & Children Multicolor",
     rating: 4.2,
+    features: ["Adjustable resistance up to 60kg", "Forearm exerciser", "Multicolor design", "Suitable for all ages"],
+    specs: { resistance: "Up to 60kg", material: "Plastic & Steel", color: "Multicolor" },
+    reviews: [
+      { name: "Tom H.", date: "2025-04-12", rating: 4, comment: "Really helps with grip strength!" },
+      { name: "Anna B.", date: "2025-03-20", rating: 4.5, comment: "Perfect for daily use, adjustable resistance is great." },
+      { name: "James W.", date: "2025-02-25", rating: 3.5, comment: "Good but feels a bit plasticky." }
+    ]
   },
-  // Add more products as needed
+  {
+    id: 4,
+    category: "Accessories",
+    name: "Jump Rope Tangle-Free",
+    price: 14.99,
+    image: "assets/images/product4.jpg",
+    description: "Jump Rope Tangle-Free Rapid Speed Jumping Rope Cable with Ball Bearings for Women, Men, and Kids, Adjustable Steel Skipping Rope with Foam Handles, Black & Red",
+    rating: 4.6,
+    features: ["Tangle-free cable", "Ball bearings for speed", "Adjustable length", "Foam handles"],
+    specs: { length: "Adjustable", material: "Steel & Foam", color: "Black & Red" },
+    reviews: [
+      { name: "Rachel S.", date: "2025-04-08", rating: 5, comment: "Best jump rope I’ve used! Super smooth." },
+      { name: "Mark D.", date: "2025-03-18", rating: 4, comment: "Great for cardio, but handles could be softer." },
+      { name: "Kelly G.", date: "2025-02-22", rating: 4.5, comment: "Perfect for my HIIT workouts!" }
+    ]
+  },
+  {
+    id: 5,
+    category: "Combos",
+    name: "Gym Accessories Combo",
+    price: 59.99,
+    image: "assets/images/product5.jpg",
+    description: "Gym Accessories Combo for Man and Woman Gym Kit for Home Workout with Gym Bag, Shaker, Rope, Wrist Band, Towel, Gloves, Deadlift Straps & Belt. Different Combos. (Pack of 6, Black)",
+    rating: 4.4,
+    features: ["6-piece combo", "Includes gym bag, shaker, rope", "Wrist band, towel, gloves", "Deadlift straps & belt"],
+    specs: { pieces: "6", material: "Mixed", color: "Black" },
+    reviews: [
+      { name: "Chris E.", date: "2025-04-10", rating: 4.5, comment: "Everything I need in one kit!" },
+      { name: "Megan F.", date: "2025-03-12", rating: 4, comment: "Good quality, but the shaker leaks a bit." },
+      { name: "Alex C.", date: "2025-02-18", rating: 4.5, comment: "Awesome value for the price." }
+    ]
+  },
+  {
+    id: 6,
+    category: "Equipment",
+    name: "Gym Pulley System 7in1",
+    price: 129.99,
+    image: "assets/images/product6.jpg",
+    description: "gym pulley systems 7in1 wall mount pull up bar for home tricep rope with 360 degree gym pulley Upgraded LAT Pull Down Cable Machine Attachment",
+    rating: 4.7,
+    features: ["7-in-1 pulley system", "Wall-mounted pull-up bar", "Tricep rope included", "360-degree pulley"],
+    specs: { weight: "Varies", material: "Steel", color: "Black" },
+    reviews: [
+      { name: "Jake R.", date: "2025-04-06", rating: 5, comment: "Incredible for home workouts!" },
+      { name: "Laura M.", date: "2025-03-15", rating: 4.5, comment: "Solid build, takes some space." },
+      { name: "Sam T.", date: "2025-02-20", rating: 4, comment: "Great for strength training!" }
+    ]
+  },
+  {
+    id: 7,
+    category: "Equipment",
+    name: "Mini Cycle Pedal Exerciser",
+    price: 49.99,
+    image: "assets/images/product7.jpg",
+    description: "100 Mini Cycle Pedal Exerciser with Fixing Strap, Adjustable Resistance and Digital Display - Suitable for Light Exercise of Legs, Arms, and Physiotherapy at Home, Black",
+    rating: 4.3,
+    features: ["Adjustable resistance", "Digital display", "Fixing strap", "For legs, arms, physiotherapy"],
+    specs: { weight: "5 kg", material: "Plastic & Steel", color: "Black" },
+    reviews: [
+      { name: "Emma W.", date: "2025-04-09", rating: 4.5, comment: "Perfect for my desk workouts!" },
+      { name: "Paul B.", date: "2025-03-17", rating: 4, comment: "Good for light exercise, display is handy." },
+      { name: "Nina S.", date: "2025-02-23", rating: 4, comment: "Works well for physiotherapy." }
+    ]
+  },
+  {
+    id: 8,
+    category: "Equipment",
+    name: "Push Up Board",
+    price: 29.99,
+    image: "assets/images/product8.jpg",
+    description: "Push Up Board, 15 Positions, Pushup Stand for Men & Women with 2 Handles, Anti Slip Accessories, Pushup Bars, Home gym equipment, Pushup Board",
+    rating: 4.5,
+    features: ["15 positions", "Anti-slip handles", "Compact design", "For men & women"],
+    specs: { positions: "15", material: "Plastic", color: "Black" },
+    reviews: [
+      { name: "Ryan L.", date: "2025-04-07", rating: 4.5, comment: "Makes push-ups so much better!" },
+      { name: "Sophie K.", date: "2025-03-14", rating: 4, comment: "Good variety of positions." },
+      { name: "Ethan J.", date: "2025-02-19", rating: 4.5, comment: "Sturdy and easy to use." }
+    ]
+  },
+  {
+    id: 9,
+    category: "Equipment",
+    name: "Sit-Up Bar",
+    price: 24.99,
+    image: "assets/images/product9.jpg",
+    description: "Roughhouse Sit-Up Bar for Home Workouts | Portable Abdominal Exercise Equipment with Strong Single Suctions Cup | Sit-Up Assistant Device for Abs, Core Strength, and Fitness at Home",
+    rating: 4.4,
+    features: ["Strong suction cup", "Portable design", "For abs and core", "Easy to install"],
+    specs: { weight: "1 kg", material: "Steel & Rubber", color: "Black" },
+    reviews: [
+      { name: "Olivia P.", date: "2025-04-11", rating: 4.5, comment: "Great for ab workouts at home!" },
+      { name: "Liam N.", date: "2025-03-16", rating: 4, comment: "Suction is strong, but setup took a bit." },
+      { name: "Mia D.", date: "2025-02-21", rating: 4.5, comment: "Perfect for my small apartment." }
+    ]
+  },
+  {
+    id: 10,
+    category: "Equipment",
+    name: "Abs Roller",
+    price: 34.99,
+    image: "assets/images/product10.jpg",
+    description: "Abs Roller, Ab Wheel Anti Rust Stainless Steel Rod, Ab Wheel, Home Gym Equipment Abs Workouts 100 Kgs, Core Workouts for Men and Women (6MM Safe Knee Mat, Yellow)",
+    rating: 4.6,
+    features: ["Anti-rust stainless steel", "100 kg capacity", "Includes 6mm knee mat", "For core workouts"],
+    specs: { capacity: "100 kg", material: "Steel & Rubber", color: "Yellow" },
+    reviews: [
+      { name: "Noah G.", date: "2025-04-08", rating: 5, comment: "Awesome for core strength!" },
+      { name: "Ava T.", date: "2025-03-13", rating: 4.5, comment: "Smooth rolling, knee mat is a plus." },
+      { name: "Lucas M.", date: "2025-02-24", rating: 4, comment: "Great but a bit challenging for beginners." }
+    ]
+  }
 ];
 
 // Cart
@@ -39,6 +171,22 @@ document.getElementById("menu-btn").addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
 });
 
+// Close Popup (Sale Page)
+function closePopup() {
+  document.getElementById("sale-popup").style.display = "none";
+}
+
+// Image Zoom
+function openZoom(src) {
+  const zoomDiv = document.getElementById("image-zoom");
+  zoomDiv.querySelector("img").src = src;
+  zoomDiv.classList.remove("hidden");
+}
+
+function closeZoom() {
+  document.getElementById("image-zoom").classList.add("hidden");
+}
+
 // Render Best Sellers (Homepage)
 function renderBestSellers() {
   const bestSellers = document.getElementById("best-sellers");
@@ -47,14 +195,14 @@ function renderBestSellers() {
       .slice(0, 4)
       .map(
         (product) => `
-          <div class="product-card bg-gray-800 rounded-lg shadow-md overflow-hidden animate-fade-in">
+          <div class="product-card glass rounded-lg shadow-md overflow-hidden animate-slide-up">
             <a href="product.html?id=${product.id}">
               <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
               <div class="p-4">
                 <h3 class="text-lg font-bold">${product.name}</h3>
                 <p class="text-blue-400">$${product.price.toFixed(2)}</p>
                 <p class="text-yellow-400">${"★".repeat(Math.floor(product.rating))}</p>
-                <button onclick="addToCart(${product.id})" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Add to Cart</button>
+                <button onclick="addToCart(${product.id}); event.preventDefault();" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 pulse">Add to Cart</button>
               </div>
             </a>
           </div>
@@ -108,14 +256,14 @@ function renderFilteredProducts(products) {
   productGrid.innerHTML = products
     .map(
       (product) => `
-        <div class="product-card bg-gray-800 rounded-lg shadow-md overflow-hidden animate-fade-in">
+        <div class="product-card glass rounded-lg shadow-md overflow-hidden animate-slide-up">
           <a href="product.html?id=${product.id}">
             <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
             <div class="p-4">
               <h3 class="text-lg font-bold">${product.name}</h3>
               <p class="text-blue-400">$${product.price.toFixed(2)}</p>
               <p class="text-yellow-400">${"★".repeat(Math.floor(product.rating))}</p>
-              <button onclick="addToCart(${product.id})" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Add to Cart</button>
+              <button onclick="addToCart(${product.id}); event.preventDefault();" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 pulse">Add to Cart</button>
             </div>
           </a>
         </div>
@@ -131,18 +279,46 @@ function renderProductDetail() {
   const product = products.find((p) => p.id === productId);
 
   if (product) {
-    document.getElementById("product-image").src = product.image;
+    // Image
+    const productImage = document.getElementById("product-image");
+    productImage.src = product.image;
+    productImage.onclick = () => openZoom(product.image);
+
+    // Basic Info
     document.getElementById("product-name").textContent = product.name;
     document.getElementById("product-price").textContent = `$${product.price.toFixed(2)}`;
     document.getElementById("product-description").textContent = product.description;
     document.getElementById("product-rating").textContent = "★".repeat(Math.floor(product.rating));
+
+    // Features
+    document.getElementById("product-features").innerHTML = product.features.map(f => `<li>${f}</li>`).join("");
+
+    // Specifications
+    document.getElementById("product-specs").innerHTML = Object.entries(product.specs)
+      .map(([key, value]) => `<p><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</p>`)
+      .join("");
+
+    // Reviews
+    document.getElementById("product-reviews").innerHTML = product.reviews
+      .map(
+        (review) => `
+          <div class="glass p-4 rounded-lg animate-fade-in">
+            <div class="flex items-center mb-2">
+              <span class="text-yellow-400">${"★".repeat(review.rating)}</span>
+              <span class="ml-2 text-gray-400">${review.name} - ${review.date}</span>
+            </div>
+            <p class="text-gray-400">${review.comment}</p>
+          </div>
+        `
+      )
+      .join("");
 
     // Related Products
     const relatedProducts = products.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 4);
     document.getElementById("related-products").innerHTML = relatedProducts
       .map(
         (p) => `
-          <div class="product-card bg-gray-800 rounded-lg shadow-md overflow-hidden animate-fade-in">
+          <div class="product-card glass rounded-lg shadow-md overflow-hidden animate-slide-up">
             <a href="product.html?id=${p.id}">
               <img src="${p.image}" alt="${p.name}" class="w-full h-48 object-cover">
               <div class="p-4">
@@ -182,7 +358,7 @@ function renderCart() {
     cartItems.innerHTML = cart
       .map(
         (item) => `
-          <div class="flex items-center bg-gray-800 p-4 rounded-lg">
+          <div class="flex items-center glass p-4 rounded-lg animate-fade-in">
             <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-lg mr-4">
             <div class="flex-1">
               <h3 class="text-lg font-bold">${item.name}</h3>
