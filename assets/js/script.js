@@ -1,4 +1,4 @@
-// Sample Product Data
+// Sample Product Data with Affiliate Links
 const products = [
   {
     id: 1,
@@ -7,6 +7,7 @@ const products = [
     price: 99.99,
     image: "assets/images/product1.jpg",
     description: "16 Kg Home Gym Set With One 3 Ft Curl And One Pair Dumbbell Rods With Gym Accessories, Black",
+    affiliateLink: "https://amzn.to/3GFVPaK",
     rating: 4.5,
     features: ["16 kg total weight", "Includes 3 ft curl bar", "Dumbbell rods included", "Black finish"],
     specs: { weight: "16 kg", material: "Steel", color: "Black" },
@@ -23,6 +24,7 @@ const products = [
     price: 149.99,
     image: "assets/images/product2.jpg",
     description: "Burn lab 6 in 1 multifunctional weight training kit - Dumbbells, Kettlebells, Barbells & Push up brackets in 1 | Adjustable Weights | Perfect for Full Body Workout",
+    affiliateLink: "https://amzn.to/44rc3yf",
     rating: 4.8,
     features: ["6-in-1 functionality", "Adjustable weights", "Includes push-up brackets", "Full-body workout"],
     specs: { weight: "Varies", material: "Steel & Plastic", color: "Black" },
@@ -39,6 +41,7 @@ const products = [
     price: 19.99,
     image: "assets/images/product3.jpg",
     description: "Adjustable Hand Grip Strengthener with Forearm Exerciser, Hand Gripper, Power Grip-Gym-60kg-Finger exercise for Veins for Men, Women & Children Multicolor",
+    affiliateLink: "https://amzn.to/44w2UVj",
     rating: 4.2,
     features: ["Adjustable resistance up to 60kg", "Forearm exerciser", "Multicolor design", "Suitable for all ages"],
     specs: { resistance: "Up to 60kg", material: "Plastic & Steel", color: "Multicolor" },
@@ -55,6 +58,7 @@ const products = [
     price: 14.99,
     image: "assets/images/product4.jpg",
     description: "Jump Rope Tangle-Free Rapid Speed Jumping Rope Cable with Ball Bearings for Women, Men, and Kids, Adjustable Steel Skipping Rope with Foam Handles, Black & Red",
+    affiliateLink: "https://amzn.to/3GJDxp1",
     rating: 4.6,
     features: ["Tangle-free cable", "Ball bearings for speed", "Adjustable length", "Foam handles"],
     specs: { length: "Adjustable", material: "Steel & Foam", color: "Black & Red" },
@@ -71,6 +75,7 @@ const products = [
     price: 59.99,
     image: "assets/images/product5.jpg",
     description: "Gym Accessories Combo for Man and Woman Gym Kit for Home Workout with Gym Bag, Shaker, Rope, Wrist Band, Towel, Gloves, Deadlift Straps & Belt. Different Combos. (Pack of 6, Black)",
+    affiliateLink: "https://amzn.to/3YZLaxF",
     rating: 4.4,
     features: ["6-piece combo", "Includes gym bag, shaker, rope", "Wrist band, towel, gloves", "Deadlift straps & belt"],
     specs: { pieces: "6", material: "Mixed", color: "Black" },
@@ -86,7 +91,8 @@ const products = [
     name: "Gym Pulley System 7in1",
     price: 129.99,
     image: "assets/images/product6.jpg",
-    description: "gym pulley systems 7in1 wall mount pull up bar for home tricep rope with 360 degree gym pulley Upgraded LAT Pull Down Cable Machine Attachment",
+    description: "Gym pulley systems 7in1 wall mount pull up bar for home tricep rope with 360 degree gym pulley Upgraded LAT Pull Down Cable Machine Attachment",
+    affiliateLink: "https://amzn.to/42Kvdhh",
     rating: 4.7,
     features: ["7-in-1 pulley system", "Wall-mounted pull-up bar", "Tricep rope included", "360-degree pulley"],
     specs: { weight: "Varies", material: "Steel", color: "Black" },
@@ -103,6 +109,7 @@ const products = [
     price: 49.99,
     image: "assets/images/product7.jpg",
     description: "100 Mini Cycle Pedal Exerciser with Fixing Strap, Adjustable Resistance and Digital Display - Suitable for Light Exercise of Legs, Arms, and Physiotherapy at Home, Black",
+    affiliateLink: "https://amzn.to/3YwqxZU",
     rating: 4.3,
     features: ["Adjustable resistance", "Digital display", "Fixing strap", "For legs, arms, physiotherapy"],
     specs: { weight: "5 kg", material: "Plastic & Steel", color: "Black" },
@@ -119,6 +126,7 @@ const products = [
     price: 29.99,
     image: "assets/images/product8.jpg",
     description: "Push Up Board, 15 Positions, Pushup Stand for Men & Women with 2 Handles, Anti Slip Accessories, Pushup Bars, Home gym equipment, Pushup Board",
+    affiliateLink: "https://amzn.to/4mlxt6D",
     rating: 4.5,
     features: ["15 positions", "Anti-slip handles", "Compact design", "For men & women"],
     specs: { positions: "15", material: "Plastic", color: "Black" },
@@ -135,6 +143,7 @@ const products = [
     price: 24.99,
     image: "assets/images/product9.jpg",
     description: "Roughhouse Sit-Up Bar for Home Workouts | Portable Abdominal Exercise Equipment with Strong Single Suctions Cup | Sit-Up Assistant Device for Abs, Core Strength, and Fitness at Home",
+    affiliateLink: "https://amzn.to/4m8RSM0",
     rating: 4.4,
     features: ["Strong suction cup", "Portable design", "For abs and core", "Easy to install"],
     specs: { weight: "1 kg", material: "Steel & Rubber", color: "Black" },
@@ -151,6 +160,7 @@ const products = [
     price: 34.99,
     image: "assets/images/product10.jpg",
     description: "Abs Roller, Ab Wheel Anti Rust Stainless Steel Rod, Ab Wheel, Home Gym Equipment Abs Workouts 100 Kgs, Core Workouts for Men and Women (6MM Safe Knee Mat, Yellow)",
+    affiliateLink: "https://amzn.to/3RMKZ54",
     rating: 4.6,
     features: ["Anti-rust stainless steel", "100 kg capacity", "Includes 6mm knee mat", "For core workouts"],
     specs: { capacity: "100 kg", material: "Steel & Rubber", color: "Yellow" },
@@ -165,15 +175,33 @@ const products = [
 // Cart
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+// Hide Loading Spinner
+window.addEventListener("load", () => {
+  document.getElementById("loading").style.display = "none";
+});
+
 // Mobile Menu Toggle
 document.getElementById("menu-btn").addEventListener("click", () => {
   const mobileMenu = document.getElementById("mobile-menu");
   mobileMenu.classList.toggle("hidden");
 });
 
-// Close Popup (Sale Page)
+// Close Popups
 function closePopup() {
   document.getElementById("sale-popup").style.display = "none";
+}
+
+function closeCheckoutPopup() {
+  document.getElementById("checkout-popup").style.display = "none";
+}
+
+// Checkout Popup Trigger
+const checkoutForm = document.getElementById("checkout-form");
+if (checkoutForm) {
+  checkoutForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    document.getElementById("checkout-popup").classList.remove("hidden");
+  });
 }
 
 // Image Zoom
@@ -187,6 +215,35 @@ function closeZoom() {
   document.getElementById("image-zoom").classList.add("hidden");
 }
 
+// Ads Slideshow
+function initSlideshow() {
+  const slideshow = document.getElementById("ad-slideshow");
+  if (slideshow) {
+    let currentSlide = 0;
+    const slides = slideshow.children.length;
+
+    function showSlide(index) {
+      slideshow.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    document.getElementById("next-slide").addEventListener("click", () => {
+      currentSlide = (currentSlide + 1) % slides;
+      showSlide(currentSlide);
+    });
+
+    document.getElementById("prev-slide").addEventListener("click", () => {
+      currentSlide = (currentSlide - 1 + slides) % slides;
+      showSlide(currentSlide);
+    });
+
+    // Auto-rotate every 5 seconds
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides;
+      showSlide(currentSlide);
+    }, 5000);
+  }
+}
+
 // Render Best Sellers (Homepage)
 function renderBestSellers() {
   const bestSellers = document.getElementById("best-sellers");
@@ -195,16 +252,21 @@ function renderBestSellers() {
       .slice(0, 4)
       .map(
         (product) => `
-          <div class="product-card glass rounded-lg shadow-md overflow-hidden animate-slide-up">
+          <div class="product-card glass rounded-2xl shadow-md overflow-hidden animate-slide-up">
             <a href="product.html?id=${product.id}">
               <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
-              <div class="p-4">
-                <h3 class="text-lg font-bold">${product.name}</h3>
-                <p class="text-blue-400">$${product.price.toFixed(2)}</p>
-                <p class="text-yellow-400">${"★".repeat(Math.floor(product.rating))}</p>
-                <button onclick="addToCart(${product.id}); event.preventDefault();" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 pulse">Add to Cart</button>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white">${product.name}</h3>
+                <p class="text-blue-400 text-lg mt-2">$${product.price.toFixed(2)}</p>
+                <div class="flex items-center mt-2">
+                  <span class="text-yellow-400">${"★".repeat(Math.floor(product.rating))}${"☆".repeat(5 - Math.floor(product.rating))}</span>
+                </div>
               </div>
             </a>
+            <div class="p-6 pt-0 flex space-x-4">
+              <button onclick="addToCart(${product.id})" class="flex-1 bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700 pulse">Add to Cart</button>
+              <a href="${product.affiliateLink}" target="_blank" class="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full hover:from-blue-600 hover:to-purple-600 pulse">Buy Now</a>
+            </div>
           </div>
         `
       )
@@ -212,102 +274,98 @@ function renderBestSellers() {
   }
 }
 
-// Render Products (Shop Page)
-function renderProducts() {
+// Render Shop Products
+function renderShopProducts() {
   const productGrid = document.getElementById("product-grid");
   if (productGrid) {
-    let filteredProducts = [...products];
+    let filteredProducts = products;
 
     // Category Filter
     const categoryFilter = document.getElementById("category-filter");
     categoryFilter.addEventListener("change", () => {
       const category = categoryFilter.value;
       filteredProducts = category === "all" ? products : products.filter((p) => p.category === category);
-      renderFilteredProducts(filteredProducts);
-    });
-
-    // Sort
-    const sort = document.getElementById("sort");
-    sort.addEventListener("change", () => {
-      if (sort.value === "price-asc") {
-        filteredProducts.sort((a, b) => a.price - b.price);
-      } else if (sort.value === "price-desc") {
-        filteredProducts.sort((a, b) => b.price - a.price);
-      } else if (sort.value === "rating") {
-        filteredProducts.sort((a, b) => b.rating - a.rating);
-      }
-      renderFilteredProducts(filteredProducts);
+      applyFilters();
     });
 
     // Search
-    const search = document.getElementById("search");
-    search.addEventListener("input", () => {
-      const query = search.value.toLowerCase();
-      filteredProducts = products.filter((p) => p.name.toLowerCase().includes(query));
-      renderFilteredProducts(filteredProducts);
+    const searchInput = document.getElementById("search");
+    searchInput.addEventListener("input", () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      filteredProducts = products.filter((p) => p.name.toLowerCase().includes(searchTerm));
+      applyFilters();
     });
 
-    renderFilteredProducts(filteredProducts);
-  }
-}
+    // Sort
+    const sortSelect = document.getElementById("sort");
+    sortSelect.addEventListener("change", () => {
+      applyFilters();
+    });
 
-function renderFilteredProducts(products) {
-  const productGrid = document.getElementById("product-grid");
-  productGrid.innerHTML = products
-    .map(
-      (product) => `
-        <div class="product-card glass rounded-lg shadow-md overflow-hidden animate-slide-up">
-          <a href="product.html?id=${product.id}">
-            <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-lg font-bold">${product.name}</h3>
-              <p class="text-blue-400">$${product.price.toFixed(2)}</p>
-              <p class="text-yellow-400">${"★".repeat(Math.floor(product.rating))}</p>
-              <button onclick="addToCart(${product.id}); event.preventDefault();" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 pulse">Add to Cart</button>
+    function applyFilters() {
+      let sortedProducts = [...filteredProducts];
+      const sortValue = sortSelect.value;
+      if (sortValue === "price-asc") {
+        sortedProducts.sort((a, b) => a.price - b.price);
+      } else if (sortValue === "price-desc") {
+        sortedProducts.sort((a, b) => b.price - a.price);
+      } else if (sortValue === "rating") {
+        sortedProducts.sort((a, b) => b.rating - a.rating);
+      }
+
+      productGrid.innerHTML = sortedProducts
+        .map(
+          (product) => `
+            <div class="product-card glass rounded-2xl shadow-md overflow-hidden animate-slide-up">
+              <a href="product.html?id=${product.id}">
+                <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white">${product.name}</h3>
+                  <p class="text-blue-400 text-lg mt-2">$${product.price.toFixed(2)}</p>
+                  <div class="flex items-center mt-2">
+                    <span class="text-yellow-400">${"★".repeat(Math.floor(product.rating))}${"☆".repeat(5 - Math.floor(product.rating))}</span>
+                  </div>
+                </div>
+              </a>
+              <div class="p-6 pt-0 flex space-x-4">
+                <button onclick="addToCart(${product.id})" class="flex-1 bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700 pulse">Add to Cart</button>
+                <a href="${product.affiliateLink}" target="_blank" class="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full hover:from-blue-600 hover:to-purple-600 pulse">Buy Now</a>
+              </div>
             </div>
-          </a>
-        </div>
-      `
-    )
-    .join("");
+          `
+        )
+        .join("");
+    }
+
+    applyFilters();
+  }
 }
 
 // Render Product Detail
 function renderProductDetail() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const productId = parseInt(urlParams.get("id"));
-  const product = products.find((p) => p.id === productId);
-
+  const productId = new URLSearchParams(window.location.search).get("id");
+  const product = products.find((p) => p.id == productId);
   if (product) {
-    // Image
-    const productImage = document.getElementById("product-image");
-    productImage.src = product.image;
-    productImage.onclick = () => openZoom(product.image);
-
-    // Basic Info
+    document.getElementById("product-image").src = product.image;
+    document.getElementById("product-image").onclick = () => openZoom(product.image);
     document.getElementById("product-name").textContent = product.name;
     document.getElementById("product-price").textContent = `$${product.price.toFixed(2)}`;
     document.getElementById("product-description").textContent = product.description;
-    document.getElementById("product-rating").textContent = "★".repeat(Math.floor(product.rating));
+    document.getElementById("product-rating").innerHTML = "★".repeat(Math.floor(product.rating)) + "☆".repeat(5 - Math.floor(product.rating));
+    document.getElementById("buy-now").href = product.affiliateLink;
 
-    // Features
-    document.getElementById("product-features").innerHTML = product.features.map(f => `<li>${f}</li>`).join("");
-
-    // Specifications
+    document.getElementById("product-features").innerHTML = product.features.map((f) => `<li>${f}</li>`).join("");
     document.getElementById("product-specs").innerHTML = Object.entries(product.specs)
       .map(([key, value]) => `<p><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</p>`)
       .join("");
-
-    // Reviews
     document.getElementById("product-reviews").innerHTML = product.reviews
       .map(
-        (review) => `
-          <div class="glass p-4 rounded-lg animate-fade-in">
-            <div class="flex items-center mb-2">
-              <span class="text-yellow-400">${"★".repeat(review.rating)}</span>
-              <span class="ml-2 text-gray-400">${review.name} - ${review.date}</span>
-            </div>
-            <p class="text-gray-400">${review.comment}</p>
+        (r) => `
+          <div class="glass p-4 rounded-xl">
+            <p class="font-bold text-white">${r.name}</p>
+            <p class="text-gray-400 text-sm">${r.date}</p>
+            <p class="text-yellow-400">${"★".repeat(r.rating)}${"☆".repeat(5 - r.rating)}</p>
+            <p class="text-gray-300">${r.comment}</p>
           </div>
         `
       )
@@ -318,15 +376,21 @@ function renderProductDetail() {
     document.getElementById("related-products").innerHTML = relatedProducts
       .map(
         (p) => `
-          <div class="product-card glass rounded-lg shadow-md overflow-hidden animate-slide-up">
+          <div class="product-card glass rounded-2xl shadow-md overflow-hidden animate-slide-up">
             <a href="product.html?id=${p.id}">
               <img src="${p.image}" alt="${p.name}" class="w-full h-48 object-cover">
-              <div class="p-4">
-                <h3 class="text-lg font-bold">${p.name}</h3>
-                <p class="text-blue-400">$${p.price.toFixed(2)}</p>
-                <p class="text-yellow-400">${"★".repeat(Math.floor(p.rating))}</p>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white">${p.name}</h3>
+                <p class="text-blue-400 text-lg mt-2">$${p.price.toFixed(2)}</p>
+                <div class="flex items-center mt-2">
+                  <span class="text-yellow-400">${"★".repeat(Math.floor(p.rating))}${"☆".repeat(5 - Math.floor(p.rating))}</span>
+                </div>
               </div>
             </a>
+            <div class="p-6 pt-0 flex space-x-4">
+              <button onclick="addToCart(${p.id})" class="flex-1 bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700 pulse">Add to Cart</button>
+              <a href="${ Ascendant">Buy Now</a> href="${p.affiliateLink}" target="_blank" class="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full hover:from-blue-600 hover:to-purple-600 pulse">Buy Now</a>
+            </div>
           </div>
         `
       )
@@ -338,13 +402,25 @@ function renderProductDetail() {
 function addToCart(productId) {
   const product = products.find((p) => p.id === productId);
   const cartItem = cart.find((item) => item.id === productId);
-
   if (cartItem) {
-    cartItem.quantity += 1;
+    cartItem.quantity++;
   } else {
     cart.push({ ...product, quantity: 1 });
   }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
 
+// Update Cart Quantity
+function updateQuantity(productId, quantity) {
+  if (quantity <= 0) {
+    cart = cart.filter((item) => item.id !== productId);
+  } else {
+    const cartItem = cart.find((item) => item.id === productId);
+    if (cartItem) {
+      cartItem.quantity = quantity;
+    }
+  }
   localStorage.setItem("cart", JSON.stringify(cart));
   renderCart();
 }
@@ -353,39 +429,39 @@ function addToCart(productId) {
 function renderCart() {
   const cartItems = document.getElementById("cart-items");
   const cartTotal = document.getElementById("cart-total");
-
   if (cartItems && cartTotal) {
-    cartItems.innerHTML = cart
-      .map(
-        (item) => `
-          <div class="flex items-center glass p-4 rounded-lg animate-fade-in">
-            <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-lg mr-4">
-            <div class="flex-1">
-              <h3 class="text-lg font-bold">${item.name}</h3>
-              <p class="text-blue-400">$${item.price.toFixed(2)} x ${item.quantity}</p>
+    if (cart.length === 0) {
+      cartItems.innerHTML = '<p class="text-gray-400 text-center">Your cart is empty.</p>';
+      cartTotal.textContent = "$0.00";
+    } else {
+      cartItems.innerHTML = cart
+        .map(
+          (item) => `
+            <div class="flex items-center glass p-4 rounded-xl">
+              <img src="${item.image}" alt="${item.name}" class="w-24 h-24 object-cover rounded-lg mr-4">
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-white">${item.name}</h3>
+                <p class="text-blue-400">$${item.price.toFixed(2)}</p>
+                <div class="flex items-center mt-2">
+                  <button onclick="updateQuantity(${item.id}, ${item.quantity - 1})" class="bg-gray-800 text-white px-3 py-1 rounded-l-full hover:bg-gray-700">-</button>
+                  <span class="px-4">${item.quantity}</span>
+                  <button onclick="updateQuantity(${item.id}, ${item.quantity + 1})" class="bg-gray-800 text-white px-3 py-1 rounded-r-full hover:bg-gray-700">+</button>
+                </div>
+              </div>
+              <p class="text-blue-400 text-lg">$${(item.price * item.quantity).toFixed(2)}</p>
             </div>
-            <button onclick="removeFromCart(${item.id})" class="text-red-400 hover:text-red-600">Remove</button>
-          </div>
-        `
-      )
-      .join("");
-
-    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+          `
+        )
+        .join("");
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      cartTotal.textContent = `$${total.toFixed(2)}`;
+    }
   }
 }
 
-// Remove from Cart
-function removeFromCart(productId) {
-  cart = cart.filter((item) => item.id !== productId);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  renderCart();
-}
-
-// Initialize
-document.addEventListener("DOMContentLoaded", () => {
-  renderBestSellers();
-  renderProducts();
-  renderProductDetail();
-  renderCart();
-});
+// Initialize Functions
+initSlideshow();
+renderBestSellers();
+renderShopProducts();
+renderProductDetail();
+renderCart();
