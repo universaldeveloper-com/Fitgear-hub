@@ -5,81 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout - FitGear Hub</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/styles.css">
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
-<body class="bg-gray-900 text-white font-inter">
+<body class="bg-gray-950 text-white font-sf-pro">
+  <!-- Loading Spinner -->
+  <div id="loading" class="fixed inset-0 bg-gray-950 bg-opacity-75 flex items-center justify-center z-50">
+    <svg class="w-12 h-12 text-blue-400 animate-spin" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 4v1.5c4.14 0 7.5 3.36 7.5 7.5h1.5c0-4.97-4.03-9-9-9z"/>
+    </svg>
+  </div>
+
   <!-- Navigation -->
-  <nav class="fixed top-0 w-full bg-gray-800 bg-opacity-90 glass z-10">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-2xl font-bold">FitGear Hub</a>
-      <div class="hidden md:flex space-x-6">
-        <a href="index.html" class="hover:text-blue-400 transition-colors">Home</a>
-        <a href="shop.html" class="hover:text-blue-400 transition-colors">Shop</a>
-        <a href="cart.html" class="hover:text-blue-400 transition-colors">Cart</a>
-        <a href="sale.html" class="hover:text-blue-400 transition-colors">90% Products</a>
+  <nav class="fixed top-0 w-full glass bg-gray-900 bg-opacity-80 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">FitGear Hub</a>
+      <div class="hidden md:flex space-x-8">
+        <a href="index.html" class="hover:text-blue-400 transition-all duration-300 transform hover:scale-105">Home</a>
+        <a href="shop.html" class="hover:text-blue-400 transition-all duration-300 transform hover:scale-105">Shop</a>
+        <a href="cart.html" class="hover:text-blue-400 transition-all duration-300 transform hover:scale-105">Cart</a>
+        <a href="sale.html" class="hover:text-blue-400 transition-all duration-300 transform hover:scale-105">90% Off</a>
       </div>
       <button id="menu-btn" class="md:hidden focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
         </svg>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 glass">
-      <a href="index.html" class="block px-4 py-2 hover:bg-gray-700">Home</a>
-      <a href="shop.html" class="block px-4 py-2 hover:bg-gray-700">Shop</a>
-      <a href="cart.html" class="block px-4 py-2 hover:bg-gray-700">Cart</a>
-      <a href="sale.html" class="block px-4 py-2 hover:bg-gray-700">90% Products</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 bg-opacity-90 glass">
+      <a href="index.html" class="block px-6 py-3 hover:bg-gray-800 transition-colors">Home</a>
+      <a href="shop.html" class="block px-6 py-3 hover:bg-gray-800 transition-colors">Shop</a>
+      <a href="cart.html" class="block px-6 py-3 hover:bg-gray-800 transition-colors">Cart</a>
+      <a href="sale.html" class="block px-6 py-3 hover:bg-gray-800 transition-colors">90% Off</a>
     </div>
   </nav>
 
-  <!-- Checkout Section -->
-  <section class="container mx-auto px-4 py-24">
-    <h1 class="text-4xl font-bold mb-8 text-center animate-slide-in">Checkout</h1>
-    <div class="max-w-lg mx-auto glass p-6 rounded-lg shadow-md animate-fade-in">
-      <h2 class="text-2xl font-semibold mb-4">Shipping Information</h2>
-      <form>
-        <input type="text" placeholder="Full Name" class="w-full bg-gray-800 text-white px-4 py-2 mb-4 rounded-lg glass">
-        <input type="text" placeholder="Address" class="w-full bg-gray-800 text-white px-4 py-2 mb-4 rounded-lg glass">
-        <input type="text" placeholder="City" class="w-full bg-gray-800 text-white px-4 py-2 mb-4 rounded-lg glass">
-        <input type="text" placeholder="Postal Code" class="w-full bg-gray-800 text-white px-4 py-2 mb-4 rounded-lg glass">
-        <h2 class="text-2xl font-semibold mb-4">Payment Information</h2>
-        <p class="text-gray-400 mb-4">Payment integration coming soon!</p>
-        <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 w-full pulse">Place Order</button>
+  <!-- Checkout wchodzi -->
+  <section class="container mx-auto px-6 py-24">
+    <h1 class="text-5xl font-bold mb-12 text-center animate-slide-in bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">Checkout</h1>
+    <div class="max-w-lg mx-auto glass p-8 rounded-2xl animate-fade-in">
+      <h2 class="text-3xl font-bold mb-6 text-white">Shipping Information</h2>
+      <form id="checkout-form">
+        <input type="text" placeholder="Full Name" class="w-full bg-gray-800 bg-opacity-50 text-white px-4 py-3 mb-4 rounded-full glass focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <input type="text" placeholder="Address" class="w-full bg-gray-800 bg-opacity-50 text-white px-4 py-3 mb-4 rounded-full glass focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <input type="text" placeholder="City" class="w-full bg-gray-800 bg-opacity-50 text-white px-4 py-3 mb-4 rounded-full glass focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <input type="text" placeholder="Postal Code" class="w-full bg-gray-800 bg-opacity-50 text-white px-4 py-3 mb-4 rounded-full glass focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <h2 class="text-3xl font-bold mb-6 text-white">Payment Information</h2>
+        <p class="text-gray-400 mb-6">Payment integration coming soon!</p>
+        <button type="submit" class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full hover:from-blue-600 hover:to-purple-600 w-full transition-all duration-300 pulse">Place Order</button>
       </form>
+    </div>
+    <!-- Popup -->
+    <div id="checkout-popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <div class="glass p-8 rounded-2xl max-w-sm text-center animate-bounce-in">
+        <h2 class="text-2xl font-bold mb-4 text-white">Coming Soon!</h2>
+        <p class="text-gray-300 mb-6">This feature will be available soon.</p>
+        <button onclick="closeCheckoutPopup()" class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full hover:from-blue-600 hover:to-purple-600 pulse">Close</button>
+      </div>
     </div>
   </section>
 
-  <footer class="bg-gray-900 py-12">
-    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+  <footer class="bg-gray-950 py-16">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
       <div>
-        <h3 class="text-xl font-bold mb-4">FitGear Hub</h3>
-        <p class="text-gray-400">Your one-stop shop for premium gym supplies.</p>
+        <h3 class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">FitGear Hub</h3>
+        <p class="text-gray-400">Your premium destination for top-tier gym supplies.</p>
       </div>
       <div>
-        <h3 class="text-xl font-bold mb-4">Legal</h3>
-        <a href="#" class="block text-gray-400 hover:text-blue-400">Privacy Policy</a>
-        <a href="#" class="block text-gray-400 hover:text-blue-400">Terms of Service</a>
-        <a href="#" class="block text-gray-400 hover:text-blue-400">Refund Policy</a>
+        <h3 class="text-2xl font-bold mb-4 text-white">Legal</h3>
+        <a href="#" class="block text-gray-400 hover:text-blue-400 transition-colors mb-2">Privacy Policy</a>
+        <a href="#" class="block text-gray-400 hover:text-blue-400 transition-colors mb-2">Terms of Service</a>
+        <a href="#" class="block text-gray-400 hover:text-blue-400 transition-colors">Refund Policy</a>
       </div>
       <div>
-        <h3 class="text-xl font-bold mb-4">Connect</h3>
-        <a href="#" class="block text-gray-400 hover:text-blue-400">Contact Us</a>
+        <h3 class="text-2xl font-bold mb-4 text-white">Connect</h3>
+        <a href="#" class="block text-gray-400 hover:text-blue-400 transition-colors mb-2">Contact Us</a>
         <div class="flex space-x-4 mt-4">
-          <a href="#" class="text-gray-400 hover:text-blue-400">📘</a>
-          <a href="#" class="text-gray-400 hover:text-blue-400">🐦</a>
-          <a href="#" class="text-gray-400 hover:text-blue-400">📸</a>
+          <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors text-2xl">📘</a>
+          <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors text-2xl">🐦</a>
+          <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors text-2xl">📸</a>
         </div>
       </div>
       <div>
-        <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+        <h3 class="text-2xl font-bold mb-4 text-white">Newsletter</h3>
         <form class="flex">
-          <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-l-lg bg-gray-800 text-white focus:outline-none">
-          <button type="submit" class="bg-blue-500 px-4 py-2 rounded-r-lg hover:bg-blue-600">Subscribe</button>
+          <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-l-full bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-400">
+          <button type="submit" class="bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 rounded-r-full hover:from-blue-600 hover:to-purple-600 transition-all">Subscribe</button>
         </form>
       </div>
     </div>
-    <p class="text-center text-gray-400 mt-8">© 2025 FitGear Hub. All rights reserved.</p>
+    <p class="text-center text-gray-400 mt-12">© 2025 FitGear Hub. All rights reserved.</p>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.0.0/motion.min.js"></script>
