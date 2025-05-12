@@ -242,8 +242,7 @@ function initSlideshow() {
       showSlide(currentSlide);
     }, 5000);
   }
-}
-
+        }
 // Render Best Sellers (Homepage)
 function renderBestSellers() {
   const bestSellers = document.getElementById("best-sellers");
@@ -389,7 +388,7 @@ function renderProductDetail() {
             </a>
             <div class="p-6 pt-0 flex space-x-4">
               <button onclick="addToCart(${p.id})" class="flex-1 bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700 pulse">Add to Cart</button>
-              <a href="${ Ascendant">Buy Now</a> href="${p.affiliateLink}" target="_blank" class="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full hover:from-blue-600 hover:to-purple-600 pulse">Buy Now</a>
+              <a href="${p.affiliateLink}" target="_blank" class="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full hover:from-blue-600 hover:to-purple-600 pulse">Buy Now</a>
             </div>
           </div>
         `
